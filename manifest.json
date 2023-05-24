@@ -1,0 +1,23 @@
+{
+  "name": "AES Encrypter",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": "logo.png"
+  },
+  "icons": {
+    "128": "logo.png"
+  },
+  "background": {
+    "scripts": ["server.js"],
+    "persistent": false
+  },
+   "content_scripts": [
+   {
+     "matches": ["https://*.nytimes.com/*"],
+     "js": ["script.js"]
+   }
+ ],
+  "permissions": ["storage", "activeTable", "contextMenu", "http://localhost/*"]
+}
